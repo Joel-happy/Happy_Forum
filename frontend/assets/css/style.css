@@ -14,42 +14,48 @@ header{
     background-size: cover;
     background-repeat: no-repeat;
     background-image:url("../img/572763.jpg") ;
-    
 }
 
-img{
-    width: 10%;
+header>*a{
+    text-decoration: none;
 }
+
 
 nav{
+    height: 5%;
+    width: 100%;
     position: fixed;
     background-color: #000;
     display: flex;
-    justify-content: space-around;
     align-items: center;
-}
-
-.conteneur-logo{
-    margin:0 10% 0;
-}
-
-.liens-navigation{
-    display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+.logo>img{
+    width:10%;
+    height: auto;
+}
+
+div.liens-navigation{
+    text-transform: uppercase;
 }
 
 main{
-    display: flex;
-   
+   height: 100vh;
 }
 
 #formulaire{
-    background-color: aliceblue;
-    margin: 5% 20%;
-    padding: 3%; 
+    background-color: rgb(240, 248, 255);
+    margin:0% 15%;
+    width: 60%;
+    height: 20vh; 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 } 
 
 .text{
@@ -57,36 +63,28 @@ main{
 }
 
 
-/* form{
-display: flex;
-padding: 30%;
-width: 70%; 
- background-color: red;
-} */
-
-
-input.text{
+div.div1>input{
     border: none;
     border-bottom-style:solid;
     border-bottom-width: 2px;
-    border-bottom-color:darkgrey;
+    border-bottom-color:dimgray;
+}
+.div1>#nom-utilisateur{
+    margin-right: 3vw;
 }
 
 input.bout1on{
     background-color: aqua;
-    padding: 1% 3%;
 }
 
-.div1{
-    display: flex;
-    justify-content: space-between;
-}
-.div2{
-    display: flex;
-}
+
 
 span{
     display: inline-block;
-    /* background-color: blue; */
-    width: 20vw;
+    width: 80vw;
 }
+
+/*portail*/
+
+
+  
