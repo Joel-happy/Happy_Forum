@@ -1,0 +1,92 @@
+Sub Create_Tables()
+
+DoCmd.RunSQL "CREATE TABLE Utilisateur(" & _
+   "Id_Utilisateur BYTE," & _
+   "Pseudo VARCHAR(50)," & _
+   "Grade VARCHAR(50)," & _
+   "Adresse_e_mail VARCHAR(50)," & _
+   "Mot_de_passe VARCHAR(50)," & _
+   "PRIMARY KEY(Id_Utilisateur)" & _
+");"   
+
+DoCmd.RunSQL "CREATE TABLE Message(" & _
+   "Id_Message BYTE," & _
+   "Texte VARCHAR(50)," & _
+   "Date_du_message DATE," & _
+   "Id_Reponse_ BYTE," & _
+   "PRIMARY KEY(Id_Message)" & _
+");"   
+
+DoCmd.RunSQL "CREATE TABLE Discussion(" & _
+   "Id_Discussion BYTE," & _
+   "Nom_de_la_discussion VARCHAR(50)," & _
+   "Sujet VARCHAR(50)," & _
+   "Nombre_d_utilisateur DECIMAL(15,2)," & _
+   "Date_du_débat DATETIME," & _
+   "Date_de_fin DATETIME," & _
+   "PRIMARY KEY(Id_Discussion)" & _
+");"   
+
+DoCmd.RunSQL "CREATE TABLE Catégorie(" & _
+   "Id_Catégorie BYTE," & _
+   "Nom_de_la_catégorie VARCHAR(50)," & _
+   "PRIMARY KEY(Id_Catégorie)" & _
+");"   
+
+DoCmd.RunSQL "CREATE TABLE Grade(" & _
+   "Id_Grade BYTE," & _
+   "Nom_du_Grade VARCHAR(50)," & _
+   "PRIMARY KEY(Id_Grade)" & _
+");"   
+
+DoCmd.RunSQL "CREATE TABLE C___D(" & _
+   "ID_Catégorie_ BYTE," & _
+   "Id_Discussion_ BYTE," & _
+   "PRIMARY KEY(ID_Catégorie_, Id_Discussion_)" & _
+");"   
+
+DoCmd.RunSQL "CREATE TABLE G___U(" & _
+   "Id_Grade_ BYTE," & _
+   "Id_Utilisateur_ BYTE," & _
+   "PRIMARY KEY(Id_Grade_, Id_Utilisateur_)" & _
+");"   
+
+DoCmd.RunSQL "CREATE TABLE M___U(" & _
+   "Id_Message_ BYTE," & _
+   "Id_Utilisateur_ BYTE," & _
+   "PRIMARY KEY(Id_Message_, Id_Utilisateur_)" & _
+");"   
+
+DoCmd.RunSQL "CREATE TABLE U___M_(" & _
+   "Id_Utilisateur_ BYTE," & _
+   "Id_Message_ BYTE," & _
+   "PRIMARY KEY(Id_Utilisateur_, Id_Message_)" & _
+");"   
+
+DoCmd.RunSQL "CREATE TABLE D___U(" & _
+   "Id_Discussion_ BYTE," & _
+   "Id_Utilisateur_ BYTE," & _
+   "PRIMARY KEY(Id_Discussion_, Id_Utilisateur_)" & _
+");"   
+
+DoCmd.RunSQL "CREATE TABLE Réponse(" & _
+   "Id_Reponse BYTE," & _
+   "Texte VARCHAR(50)," & _
+   "PRIMARY KEY(Id_Reponse)" & _
+");"   
+
+DoCmd.RunSQL "CREATE TABLE Sauvegarde(" & _
+   "Id_Sauvegarde BYTE," & _
+   "Id_Message_ BYTE," & _
+   "Id_Utilisateur_ BYTE," & _
+   "Heure TIME," & _
+   "PRIMARY KEY(Id_Sauvegarde)" & _
+");"   
+
+DoCmd.RunSQL "CREATE TABLE D___M(" & _
+   "Id_Discussion_ BYTE," & _
+   "Id_Message_ BYTE," & _
+   "PRIMARY KEY(Id_Discussion_, Id_Message_)" & _
+");"   
+
+End Sub
