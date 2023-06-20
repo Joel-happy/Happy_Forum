@@ -44,6 +44,8 @@ if err != nil {
 	router.POST("/inscription", handleInscription)
 	router.POST("/connexion", handleConnexion)
 	router.GET("/accueil", handleAccueil)
+	router.POST("/message", handleMessage)
+
 
 	// Démarrer le serveur HTTP
 	router.Run(":8080")
@@ -138,4 +140,18 @@ func handleConnexion(c *gin.Context) {
 func handleAccueil(c *gin.Context) {
 	// Charger et afficher la page d'accueil
 	c.HTML(http.StatusOK, "accueil.html", nil)
+}
+
+func handleMessage(c *gin.Context) {
+	// Récupérer les données du formulaire d'envoi de message
+	message := c.PostForm("message")
+
+	// Traiter et enregistrer le message dans la base de données ou tout autre système de stockage de données que vous utilisez
+	err := saveMessage(message)
+	if err != nil {
+		c.String(http.StatusInternalServerError, "Erreur lors de l'envoi du message")
+		return
+	}
+
+	c.String(http.StatusOK, "Message envoyé avec succès")
 }
