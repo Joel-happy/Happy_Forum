@@ -13,7 +13,7 @@ var db *sql.DB // Déclarer une variable globale pour la connexion à la base de
 func main() {
 	// Servir les fichiers statiques du répertoire "frontend"
 	fs := http.FileServer(http.Dir("frontend"))
-	http.Handle("/frontend/", http.StripPrefix("/frontend/", fs))
+http.Handle("/frontend/", http.StripPrefix("/frontend/", fs))
 
 	// Chaîne de connexion à la base de données MySQL
 	connectionString := "root:@tcp(localhost:3306)/projetforum"
@@ -27,10 +27,13 @@ func main() {
 	defer db.Close()
 
 	// Vérifier la connexion à la base de données
-	err = db.Ping()
-	if err != nil {
-		log.Fatal(err)
-	}
+	// Test de la connexion à la base de données
+err = db.Ping()
+if err != nil {
+    log.Fatal("Erreur lors de la connexion à la base de données:", err)
+} else {
+    log.Println("Connexion à la base de données réussie")
+}
 
 	// Créer un routeur Gin
 	router := gin.Default()
