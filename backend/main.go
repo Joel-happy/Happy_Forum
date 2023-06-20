@@ -51,7 +51,7 @@ if err != nil {
 
 func handleInscription(c *gin.Context) {
 	// Récupérer les données du formulaire d'inscription
-	username := c.PostForm("username")
+	username := c.PostForm("us$0ername")
 	email := c.PostForm("email")
 	password := c.PostForm("password")
 
